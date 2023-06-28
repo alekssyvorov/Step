@@ -17,7 +17,7 @@ def task_3():
 
 
 if __name__ == "__main__":
-    choice = int(input('Make you choice 1/2/3/4/5'))
+    choice = int(input('Make you choice 1/2/3 '))
     match choice:
         case 1:
             print(task_1())
