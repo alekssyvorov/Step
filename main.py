@@ -1,19 +1,52 @@
 def task_1():
     num_1 = int(input('Number 1 '))
     num_2 = int(input('Number 2 '))
-    return num_1 + num_2, num_1 - num_2, num_1 * num_2
+    num_3 = int(input('Number 3 '))
+    choice_user = input('Summa - 1/Multiplication - 2')
+    match choice_user:
+        case '1':
+            return num_1 + num_2 + num_3
+        case '2':
+            return num_1 * num_2 * num_3
 
 
 def task_2():
-    number = int(input('Input number '))
-    percent = int(input('Input percent '))
-    return int(number * percent / 100)
+    num_1 = int(input('Number 1 '))
+    num_2 = int(input('Number 2 '))
+    num_3 = int(input('Number 3 '))
+    choice_user = input('Max - 1\nMin - 2\nAverage - 3')
+    match choice_user:
+        case '1':
+            if num_1 > num_2 and num_1 > num_3:
+                return num_1
+            elif num_2 > num_1 and num_2 > num_3:
+                return num_2
+            elif num_3 > num_1 and num_3 > num_2:
+                return num_3
+            else:
+                return f'Number is equal'
+        case '2':
+            if num_1 < num_2 and num_1 < num_3:
+                return num_1
+            elif num_2 < num_1 and num_2 < num_3:
+                return num_2
+            elif num_3 < num_1 and num_3 < num_2:
+                return num_3
+            else:
+                return f'Number is equal'
+        case '3':
+            return (num_1 + num_2 + num_3) / 3
 
 
 def task_3():
-    height = float(input('Input height '))
-    width = float(input('Input width '))
-    return height * width
+    meters = float(input('Input meters '))
+    choice_user = input('milli - 1\ninches - 2\nyards - 3')
+    if choice_user == '1':
+        return int(meters) * 0.000621371 + (meters - int(meters)) * 0.000621371
+    elif choice_user == '2':
+        return int(meters) * 25.4 + (meters - int(meters)) * 25.4
+    else:
+        return int(meters) * 1.09361 + (meters - int(meters)) * 1.09361
 
 
 if __name__ == "__main__":
