@@ -1,67 +1,61 @@
-def task_1():
-    number_day = int(input('Input number day '))
-    if number_day == 1:
-        return 'Monday'
-    elif number_day == 2:
-        return 'Tuesday'
-    elif number_day == 3:
-        return 'Wednesday'
-    elif number_day == 4:
-        return 'Thursday'
-    elif number_day == 5:
-        return 'Friday'
-    elif number_day == 6:
-        return 'Saturday '
-    elif number_day == 7:
-        return 'Sunday'
+def task_1(number: int):
+    if number % 2 == 0:
+        print(number, 'Even number.')
     else:
-        return f'Error number day'
+        print(number, 'Odd number.')
 
 
-def task_2():
-    num_month = int(input('Number '))
-    if num_month == 12 or 1 <= num_month <= 2:
-        return 'Winter'
-    elif 3 <= num_month <= 5:
-        return 'Spring'
-    elif 3 <= num_month <= 5:
-        return 'Summer'
-    elif num_month >= 6 and num_month <= 11:
-        return 'Autumn'
+def task_2(number: int):
+    if number % 7 == 0:
+        print('Number is a multiple of 7.')
     else:
-        return 'Error input'
+        print('Number is not a multiple of 7.')
 
 
-def task_3():
-    num = int(input('Number '))
-    if num > 0:
-        return 'Number is positive'
-    elif num < 0:
-        return 'Number is negative'
+def task_3(number1: float, number2: float):
+    if number1 > number2:
+        print(number1)
     else:
-        return 'Number is equal to zero'
+        print(number2)
 
 
-def task_4():
-    num_1 = int(input('Number 1'))
-    num_2 = int(input('Number 2'))
-    if num_1 == num_2:
-        return 'The numbers are equal'
+def task_4(number1: float, number2: float):
+    if number1 < number2:
+        print(number1)
     else:
-        if num_1 > num_2:
-            return num_1, num_2
-        else:
-            return num_2, num_1
+        print(number2)
+
+
+def task_5(number1: float, number2: float, sign: str):
+    if sign == '+':
+        print(number1 + number2)
+    elif sign == '-':
+        print(number1 - number2)
+    elif sign == 'average':
+        print(2 / (number1 + number2))
+    elif sign == '*':
+        print(number1 * number2)
 
 
 if __name__ == "__main__":
-    choice = int(input('Make you choice 1/2/3/4 '))
+    choice = int(input('Make you choice 1/2/3/4/5 '))
     match choice:
         case 1:
-            print(task_1())
+            number = int(input('Enter the number: '))
+            task_1(number)
         case 2:
-            print(task_2())
+            number = int(input('Enter the number: '))
+            task_2(number)
         case 3:
-            print(task_3())
+            number1 = float(input('Enter the first number: '))
+            number2 = float(input('Enter the second number: '))
+            task_3(number1, number2)
         case 4:
-            print(task_4())
+            number1 = float(input('Enter the first number: '))
+            number2 = float(input('Enter the second number: '))
+            task_4(number1, number2)
+        case 5:
+            number1 = int(input('Enter the first number: '))
+            number2 = int(input('Enter the second number: '))
+            sign = input('Enter the sign: +-average')
+            task_5(number1, number2, sign)
